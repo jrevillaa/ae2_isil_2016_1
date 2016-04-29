@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>--Ingtreso al sistema ---</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        Ingreso al Sistema
+        <br />
+        
+        <h:form>
+            Usuario: <h:inputText id="txtUsuario" value="#{administradorController.usuario}" /><br/>
+            Password: <h:inputText id="txtPassword" value="#{administradorController.password}" /><br/>
+            <h:commandButton value="Ingresar" action="#{administradorController.validar}"/><br/>
+        </h:form>
+        
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <br />
+        <h:link outcome="/administrador/List" value="Show All Administrador Items"/>
+        <br />
+        <h:link outcome="/alumno/List" value="Show All Alumno Items"/>
+        <br />
+        <h:link outcome="/curso/List" value="Show All Curso Items"/>
+    </h:body>
+
+
+
+</html>
+

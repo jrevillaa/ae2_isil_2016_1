@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AlumnoEditDlg" widgetVar="AlumnoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAlumnoTitle}">
+            <h:form id="AlumnoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{alumnoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditAlumnoLabel_chrAluCodigo}" for="chrAluCodigo" />
+                        <p:inputText id="chrAluCodigo" value="#{alumnoController.selected.chrAluCodigo}" title="#{bundle.EditAlumnoTitle_chrAluCodigo}" required="true" requiredMessage="#{bundle.EditAlumnoRequiredMessage_chrAluCodigo}"/>
+                        <p:outputLabel value="#{bundle.EditAlumnoLabel_vchAluNombres}" for="vchAluNombres" />
+                        <p:inputText id="vchAluNombres" value="#{alumnoController.selected.vchAluNombres}" title="#{bundle.EditAlumnoTitle_vchAluNombres}" />
+                        <p:outputLabel value="#{bundle.EditAlumnoLabel_vchAluApellidos}" for="vchAluApellidos" />
+                        <p:inputText id="vchAluApellidos" value="#{alumnoController.selected.vchAluApellidos}" title="#{bundle.EditAlumnoTitle_vchAluApellidos}" />
+                        <p:outputLabel value="#{bundle.EditAlumnoLabel_dtmAluFechaNac}" for="dtmAluFechaNac" />
+                        <p:calendar id="dtmAluFechaNac" pattern="MM/dd/yyyy HH:mm:ss" value="#{alumnoController.selected.dtmAluFechaNac}" title="#{bundle.EditAlumnoTitle_dtmAluFechaNac}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditAlumnoLabel_chrAluSexo}" for="chrAluSexo" />
+                        <p:inputText id="chrAluSexo" value="#{alumnoController.selected.chrAluSexo}" title="#{bundle.EditAlumnoTitle_chrAluSexo}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{alumnoController.update}" value="#{bundle.Save}" update="display,:AlumnoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'AlumnoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AlumnoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
