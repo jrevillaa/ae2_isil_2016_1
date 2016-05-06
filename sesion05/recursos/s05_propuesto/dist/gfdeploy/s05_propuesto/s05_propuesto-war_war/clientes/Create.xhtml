@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ClientesCreateDlg" widgetVar="ClientesCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateClientesTitle}">
+            <h:form id="ClientesCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{clientesController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_codigoCli}" for="codigoCli" />
+                        <p:inputText id="codigoCli" value="#{clientesController.selected.codigoCli}" title="#{bundle.CreateClientesTitle_codigoCli}" required="true" requiredMessage="#{bundle.CreateClientesRequiredMessage_codigoCli}"/>
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_login}" for="login" />
+                        <p:inputText id="login" value="#{clientesController.selected.login}" title="#{bundle.CreateClientesTitle_login}" required="true" requiredMessage="#{bundle.CreateClientesRequiredMessage_login}"/>
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_password}" for="password" />
+                        <p:inputText id="password" value="#{clientesController.selected.password}" title="#{bundle.CreateClientesTitle_password}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{clientesController.selected.nombre}" title="#{bundle.CreateClientesTitle_nombre}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_direccion}" for="direccion" />
+                        <p:inputText id="direccion" value="#{clientesController.selected.direccion}" title="#{bundle.CreateClientesTitle_direccion}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_fonoCasa}" for="fonoCasa" />
+                        <p:inputText id="fonoCasa" value="#{clientesController.selected.fonoCasa}" title="#{bundle.CreateClientesTitle_fonoCasa}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_fonoMovil}" for="fonoMovil" />
+                        <p:inputText id="fonoMovil" value="#{clientesController.selected.fonoMovil}" title="#{bundle.CreateClientesTitle_fonoMovil}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_tsexo}" for="tsexo" />
+                        <p:inputText id="tsexo" value="#{clientesController.selected.tsexo}" title="#{bundle.CreateClientesTitle_tsexo}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{clientesController.selected.email}" title="#{bundle.CreateClientesTitle_email}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_ciudad}" for="ciudad" />
+                        <p:inputText id="ciudad" value="#{clientesController.selected.ciudad}" title="#{bundle.CreateClientesTitle_ciudad}" />
+                        <p:outputLabel value="#{bundle.CreateClientesLabel_saldo}" for="saldo" />
+                        <p:inputText id="saldo" value="#{clientesController.selected.saldo}" title="#{bundle.CreateClientesTitle_saldo}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{clientesController.create}" value="#{bundle.Save}" update="display,:ClientesListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClientesCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ClientesCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

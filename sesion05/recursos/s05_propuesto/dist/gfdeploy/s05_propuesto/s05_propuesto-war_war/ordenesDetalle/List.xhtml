@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListOrdenesDetalleTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="OrdenesDetalleListForm">
+                <p:panel header="#{bundle.ListOrdenesDetalleTitle}">
+                    <p:dataTable id="datalist" value="#{ordenesDetalleController.items}" var="item"
+                                 selectionMode="single" selection="#{ordenesDetalleController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.ordenesDetallePK}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdenesDetalleTitle_cantidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cantidad}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdenesDetalleTitle_precio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.precio}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdenesDetalleTitle_productos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.productos}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdenesDetalleTitle_ordenes}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ordenes}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{ordenesDetalleController.prepareCreate}" update=":OrdenesDetalleCreateForm" oncomplete="PF('OrdenesDetalleCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":OrdenesDetalleViewForm" oncomplete="PF('OrdenesDetalleViewDialog').show()" disabled="#{empty ordenesDetalleController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":OrdenesDetalleEditForm" oncomplete="PF('OrdenesDetalleEditDialog').show()" disabled="#{empty ordenesDetalleController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{ordenesDetalleController.destroy}" update=":growl,datalist" disabled="#{empty ordenesDetalleController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

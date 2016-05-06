@@ -41,7 +41,7 @@ public class ProductosController implements Serializable {
     }
 
     protected void setEmbeddableKeys() {
-        selected.getProductosPK().setTipo( selected.getCategoria().getTipo());
+        selected.getProductosPK().setTipo(  selected.getCategoria().getTipo().charAt(0));
     }
 
     protected void initializeEmbeddableKey() {
