@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/daos/OrdenDAO.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/beans/DetalleOrden.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/beans/Producto.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/beans/Cliente.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/ejbs/CarritoLocal.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/daos/ProductoDAO.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/ejbs/ClienteLocal.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/beans/Elemento.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/daos/ClienteDAO.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/ejbs/CarritoBean.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/ejbs/ProductoLocal.java</file>
+            <file>file:/C:/jair/sesion04/recursos/Carrito/Carrito-ejb/src/java/dsw2/beans/Orden.java</file>
+        </group>
+    </open-files>
 </project-private>

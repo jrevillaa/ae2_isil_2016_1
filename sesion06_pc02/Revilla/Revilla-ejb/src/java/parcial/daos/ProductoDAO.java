@@ -1,7 +1,7 @@
 package parcial.daos;
 
 import parcial.beans.Producto;
-import parcial.util.DBConn;
+import parcial.utils.DBConn;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

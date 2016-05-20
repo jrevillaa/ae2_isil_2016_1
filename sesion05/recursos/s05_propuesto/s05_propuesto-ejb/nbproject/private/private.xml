@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/fachada/ProductosFacade.java</file>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/fachada/CategoriaFacade.java</file>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/entidades/Clientes.java</file>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/fachada/ClientesFacade.java</file>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/fachada/OrdenesDetalleFacade.java</file>
+            <file>file:/C:/jair/sesion05/recursos/s05_propuesto/s05_propuesto-ejb/src/java/carrito/fachada/OrdenesFacade.java</file>
+        </group>
     </open-files>
 </project-private>
